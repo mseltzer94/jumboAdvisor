@@ -65,6 +65,7 @@ body {
 	box-shadow: 3px 3px 1px #2E2E2E;
 }
 
+
 #cart-section {
 	background-color: #373737; 
 	border-style: none;
@@ -72,15 +73,19 @@ body {
 	margin-bottom: 25px;
 }
 
+
 #cart-section-header {
 	background-color: #373737; 
 	border-color: white;
 }
 
+
 #cart-section-title {
 	text-align: center;
 	color: white;
 }
+
+
 
 /**
  * For the correct positioning of the placeholder element, the dnd-list and
