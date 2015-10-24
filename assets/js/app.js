@@ -34,8 +34,6 @@ angular.module('xmpl.filter', []);
 
 angular.module('xmpl', ['xmpl.service', 'xmpl.directive', 'xmpl.filter', 'viz'])
 
-
-
     .run(function(greeter, user) {
     // This is effectively part of the main method initialization code
     	greeter.localize({
