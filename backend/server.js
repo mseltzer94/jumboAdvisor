@@ -119,12 +119,12 @@ app.get('/getDegreeList', function (request, response) {
 	// send back JSON
 	response.set('Content-Type', 'application/json');
 
+	console.log('===============\nGET: /getDegreeList');
+
 	degrees = db.collection('degree_list', function (err, collection) {
 		collection.find().toArray(function(er, cursor) {
 			if (!err) {
 				degree_list = [ ]
-
-				console.log('inside find');
 
 				for (i = 0; i < cursor.length; i++) {
 					degree_list.push(cursor[i]['degree'])
@@ -147,6 +147,8 @@ app.get('/getDegreeSheet', function (request, response) {
 
 	var degree = request.query.degree;
 
+	console.log('===============\nGET: /getDegreeSheet, degree = ' + degree);
+
 	if (degree != null) {
 		degrees = db.collection('degrees', function (err, collection) {
 			collection.find().toArray(function(er, cursor) {
@@ -159,18 +161,45 @@ app.get('/getDegreeSheet', function (request, response) {
 					}
 
 					if (degree_i != null) {
-						console.log('found: ' + degree);
+						console.log('degree successfully found');
 						response.send(cursor[degree_i]);
 					} else {
-						console.log('not found: ' + degree);
+						console.log('degree not found');
 						response.send([])
 					}
 				}
 			});
 		});
 	} else {
+		console.log('degree null, not found');
 		response.send([])
 	}
+});
+
+app.get('/getCourseList', function (request, response) {
+	// enable cross-orign resource sharing
+	response.header("Access-Control-Allow-Origin", "*");
+	response.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+	// send back JSON
+	response.set('Content-Type', 'application/json');
+
+	console.log('===============\nGET: /getCourseList');
+
+	degrees = db.collection('all_courses', function (err, collection) {
+		collection.find().toArray(function(er, cursor) {
+			if (!err) {
+				course_list = [ ]
+
+				for (i = 0; i < cursor.length; i++) {
+					course_list.push(cursor[i])
+				}
+
+				console.log('found ' + course_list.length + ' courses');
+				response.send(course_list);
+			}
+		});
+	});
 });
 
 app.listen(process.env.PORT || 3000);
