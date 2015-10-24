@@ -111,7 +111,33 @@ app.get('/getCurrently', function (request, response) {
 });
 */
 
-app.get('/', function (request, response) {
+app.get('/getDegreeList', function (request, response) {
+	// enable cross-orign resource sharing
+	response.header("Access-Control-Allow-Origin", "*");
+	response.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+	// send back JSON
+	response.set('Content-Type', 'application/json');
+
+	degrees = db.collection('degree_list', function (err, collection) {
+		collection.find().toArray(function(er, cursor) {
+			if (!err) {
+				degree_list = [ ]
+
+				console.log('inside find');
+
+				for (i = 0; i < cursor.length; i++) {
+					degree_list.push(cursor[i]['degree'])
+				}
+
+				console.log('found ' + degree_list.length + ' majors');
+				response.send(degree_list);
+			}
+		});
+	});
+});
+
+app.get('/getDegreeSheet', function (request, response) {
 	// enable cross-orign resource sharing
 	response.header("Access-Control-Allow-Origin", "*");
 	response.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -125,18 +151,26 @@ app.get('/', function (request, response) {
 		degrees = db.collection('degrees', function (err, collection) {
 			collection.find().toArray(function(er, cursor) {
 				if (!err) {
+					degree_i = null;
 					for (i = 0; i < cursor.length; i++) {
-						console.log('hey');
+						if (cursor[i]['name'] == degree) {
+							degree_i = i;
+						}
+					}
+
+					if (degree_i != null) {
+						console.log('found: ' + degree);
+						response.send(cursor[degree_i]);
+					} else {
+						console.log('not found: ' + degree);
+						response.send([])
 					}
 				}
 			});
 		});
-
-		response.send(JSON.stringify({'degree': degree}));
 	} else {
 		response.send([])
 	}
-
 });
 
 app.listen(process.env.PORT || 3000);
