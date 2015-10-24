@@ -191,7 +191,7 @@
                            ["is", "ME", 1]]
           }]
     },
-    {"name": "Foundation (no pass/fail)",
+    {"name": "Foundation",
         "req_list": [
           {"name": "COMP 11",
              "description": "Where squirrels go to die",
