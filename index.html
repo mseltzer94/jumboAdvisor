@@ -26,7 +26,7 @@
 				<div ng-repeat="(listName, list) in models.lists" class="col-md-6">
 	                <div class="panel panel-info" id="cart-section">
 	                    <div class="panel-heading" id="cart-section-header">
-	                        <h3 class="panel-title" id="cart-section-title">List {{listName}}</h3>
+	                        <h3 class="panel-title" id="cart-section-title">{{listName}}</h3>
 	                    </div>
 	                    <!-- The dnd-list directive allows to drop elements into it.
 						     The dropped data will be added to the referenced list -->
@@ -54,10 +54,10 @@
 		<div class="col-sm-9 degree_sheet">
 			<h1>{{major}}</h1>
 			<div class="row">
-	            <div ng-repeat="(listName, list) in models.lists" class="col-md-6">
-	                <div class="panel panel-info">
+	            <div ng-repeat="(listName, list) in sections.lists" class="col-md-6">
+	                <div class="panel panel-info simpleDemo">
 	                    <div class="panel-heading">
-	                        <h3 class="panel-title">List {{listName}}</h3>
+	                        <h3 class="panel-title">{{listName}}</h3>
 	                    </div>
 	                    <!-- The dnd-list directive allows to drop elements into it.
 						     The dropped data will be added to the referenced list -->
@@ -73,7 +73,7 @@
 						        dnd-selected="models.selected = item"
 						        ng-class="{'selected': models.selected === item}"
 						        >
-						        {{item.label}}
+						        {{item}}
 						    </li>
 						</ul>
 	                </div>
