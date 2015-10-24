@@ -2,7 +2,7 @@
 	"name": "Computer Science (BSCS)",
 	"id": 1,
 	"sect_reqs": 
-		[{"name": "Concentration (no pass/fail)", 
+		[{"name": "Concentration", 
   		   "req_list": [
   		   		{"name": "COMP 40",
   		   		 "description": "It will be fun",
@@ -63,7 +63,7 @@
              "valid_set": [["is", "COMP", 98]]
           }]
   	},
-    {"name": "Introductory (no pass/fail)", 
+    {"name": "Introductory", 
         "req_list": [
           {"name": "ES 93",
              "description": "It will be fun",
@@ -108,7 +108,7 @@
     },
     {"name": "Humanity/Art/Social Sci HASS",
         "req_list": [
-          {"name": "ENG 1 (no pass/fail) or 3",
+          {"name": "ENG 1 or 3",
              "description": "It will be fun",
              "valid_set": [["is", "ENG", 1], ["is", "ENG", 3]]
           },
@@ -144,6 +144,36 @@
           {"name": "Ethics & Social Context: PHIL 24 or EM 54",
              "description": "It will be fun",
              "valid_set": [["is", "PHIL", 24], ["is", "EM", 54]]
+          },
+          {"name": "Breadth Elect",
+             "description": "Can include HASS, ENP, ELS, or EM courses, BME 50, CEE 1, CEE 32, ME 1, a MAX OF ONE EXP and a MAX OF ONE PE course",
+             "valid_set": [["attr", "SoE-HASS-Humanities"], 
+                           ["attr", "SoE-HASS-Social Sciences"],
+                           ["attr", "SoE-HASS-Arts"],
+                           ["range", "ENP", 0, 400],
+                           ["range", "ELS", 0, 400],
+                           ["range", "EM", 0, 400],
+                           ["range", "EXP", 0, 400],
+                           ["range", "PE", 0, 400],
+                           ["is", "BME", 50],
+                           ["is", "CEE", 1],
+                           ["is", "CEE", 32],
+                           ["is", "ME", 1]]
+          },
+          {"name": "Breadth Elect",
+             "description": "Can include HASS, ENP, ELS, or EM courses, BME 50, CEE 1, CEE 32, ME 1, a MAX OF ONE EXP and a MAX OF ONE PE course",
+             "valid_set": [["attr", "SoE-HASS-Humanities"], 
+                           ["attr", "SoE-HASS-Social Sciences"],
+                           ["attr", "SoE-HASS-Arts"],
+                           ["range", "ENP", 0, 400],
+                           ["range", "ELS", 0, 400],
+                           ["range", "EM", 0, 400],
+                           ["range", "EXP", 0, 400],
+                           ["range", "PE", 0, 400],
+                           ["is", "BME", 50],
+                           ["is", "CEE", 1],
+                           ["is", "CEE", 32],
+                           ["is", "ME", 1]]
           },
           {"name": "Breadth Elect",
              "description": "Can include HASS, ENP, ELS, or EM courses, BME 50, CEE 1, CEE 32, ME 1, a MAX OF ONE EXP and a MAX OF ONE PE course",
