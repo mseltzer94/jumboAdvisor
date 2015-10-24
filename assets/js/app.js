@@ -63,6 +63,10 @@ angular.module("demo", ['dndLists', 'ngAnimate'])
         $scope.models.lists.A.push({label: "Item A" + i});
         $scope.models.lists.B.push({label: "Item B" + i});
     }
+    $scope.sections = ["Concentration". "Foundation"];
+    $scope.sections[0].req = ["Comp 40"];
+    $scope.sections[1].req = ["Artsy Fartsy"];
+
 
     // Model to JSON for demo purpose
     $scope.$watch('models', function(model) {
