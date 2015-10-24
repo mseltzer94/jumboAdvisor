@@ -218,14 +218,17 @@
                            ["is", "BME", 141],
                            ["is", "BIO", 132],
                            ["is", "PHY", 153]]
-          },
-          {"name": "Free Elective",
-             "description": "Any class",
-             "valid_set": [["any"]]
-          },
-          {"name": "Free Elective",
-             "description": "Any class",
-             "valid_set": [["any"]]
           }]
+    },
+    {"name": "Free Electives",
+        "req_list": [
+        {"name": "Free Elective",
+            "description": "Any class",
+            "valid_set": [["any"]]
+        },
+        {"name": "Free Elective",
+            "description": "Any class",
+            "valid_set": [["any"]]
+        }]
     }]
 }]
