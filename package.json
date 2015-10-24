@@ -1,0 +1,24 @@
+{
+  "name": "jumbo-advisor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mseltzer94/jumboAdvisor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mseltzer94/jumboAdvisor/issues"
+  },
+  "homepage": "https://github.com/mseltzer94/jumboAdvisor#readme"
+}

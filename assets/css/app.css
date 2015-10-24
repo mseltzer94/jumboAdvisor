@@ -1,0 +1,41 @@
+body {
+	min-height: 100%;
+    height: 100%;
+}
+
+.container-fluid {
+	min-height: 100%;
+	height: auto;
+	padding-left: 0;
+	padding-right: 0;
+	height: 800px;
+}
+
+#sidebar-wrapper {
+	/*position: fixed;*/
+	height: 100%;
+	background-color: black;
+}
+
+.wrapper {
+	padding: 30px 10px 30px;
+}
+
+#logo {
+	display: block;
+	width: 100%;
+	height: 50px;
+
+	text-align: center;
+	vertical-align: middle;
+	background-color: white;
+	margin-bottom: 30px;
+}
+
+.degree_sheet {
+	height: 100%;
+}
+
+.degree_sheet h1 {
+	text-align: center;
+}
